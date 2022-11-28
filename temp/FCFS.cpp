@@ -1,18 +1,14 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-
 int main()
 {
-    int n, avtat = 0, avwt = 0, i, j;
-    cout << "Enter total number of processes: " << endl;
+    int n, bt[20], wt[20], tat[20], avwt = 0, avtat = 0, i, j;
+    cout << "Enter total number of processes(maximum 20):";
     cin >> n;
-    int *bt = new int[n];
-    int *wt = new int[n];
-    int *tat = new int[n];
-    cout << "Enter burst time of processes: " << endl;
-    for (int i = 0; i < n; i++)
+    cout << "\nEnter Process Burst Time\n";
+    for (i = 0; i < n; i++)
     {
-        cout << "P[" << i + 1 << "]: ";
+        cout << "P[" << i + 1 << "]:";
         cin >> bt[i];
     }
     wt[0] = 0;
@@ -33,6 +29,7 @@ int main()
     }
     avwt /= i;
     avtat /= i;
-    cout << "\nAverage Waiting Time: " << avwt;
-    cout << "\nAverage Turnaround Time: " << avtat;
+    cout << "\n\nAverage Waiting Time:" << avwt;
+    cout << "\nAverage Turnaround Time:" << avtat;
+    return 0;
 }
